@@ -53,15 +53,15 @@ print(df2.describe())
 # plt.xlabel("Height")
 # plt.ylabel("Weight")
 # plt.show()
-
-sb.kdeplot(df2["height"], df2["weight"], cmap="viridis")
-plt.hist2d(df2["height"], df2["weight"], bins=20, cmap="magma", alpha=0.3)
-plt.show()
+#
+# sb.kdeplot(df2["height"], df2["weight"], cmap="viridis")
+# plt.hist2d(df2["height"], df2["weight"], bins=20, cmap="magma", alpha=0.3)
+# plt.show()
 
 # sb.kdeplot(df2["height"], df2["weight"], cmap="magma", shade=True)
 # plt.show()
 #
-# m = df2["sex"] == 1
+m = df2["sex"] == 1
 # plt.scatter(df2.loc[m, "height"], df2.loc[m, "weight"], c="#16c6f7", s=1, label="Male")
 # plt.scatter(df2.loc[~m, "height"], df2.loc[~m, "weight"], c="#ff8b87", s=1, label="Female")
 # plt.xlabel("Height")
@@ -70,15 +70,16 @@ plt.show()
 # plt.show()
 #
 #
-# params = ["height", "weight"]
-# male = df2.loc[m, params].values
-# female = df2.loc[~m, params].values
-# plt.show()
-#
-#
-# c = ChainConsumer()
-# c.add_chain(male, parameters=params, name="Male", kde=2.0, color="b")
-# c.add_chain(female, parameters=params, name="Female", kde=2.0, color="r")
-# c.configure(contour_labels="confidence", usetex=False)
-# c.plotter.plot(figsize=2.0);
-# plt.show()
+params = ["height", "weight"]
+male = df2.loc[m, params].values
+female = df2.loc[~m, params].values
+plt.show()
+
+
+c = ChainConsumer()
+c.add_chain(male, parameters=params, name="Male", kde=1, color="b")
+c.add_chain(female, parameters=params, name="Female", kde=1, color="r")
+c.configure(contour_labels="confidence", usetex=False)
+c.plotter.plot(figsize=2.0);
+plt.show()
+
