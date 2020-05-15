@@ -62,3 +62,6 @@ plt.hist(d1, histtype="step", density=True, alpha=0.3)
 plt.hist(d2, histtype="step", density=True, alpha=0.3)
 plt.legend()
 plt.show()
+
+df = pd.DataFrame({"Data1": d1, "Data2": d2})
+print(df.describe())
