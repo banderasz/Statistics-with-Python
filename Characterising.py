@@ -1,6 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.stats as st
+import pandas as pd
 from scipy.interpolate import interp1d
 
 data = np.loadtxt("data/dataset.txt")
@@ -109,3 +110,12 @@ plt.hist(samp_percentile_1, bins=bins, density=True, histtype="step", label="Per
 plt.ylabel("Probability")
 plt.legend()
 plt.show()
+
+
+"""
+Covariance in multidimension dataset
+"""
+
+dataset = pd.read_csv("data/height_weight.csv")[["height", "weight"]]
+covariance = dataset.cov()
+print(covariance)
