@@ -13,6 +13,9 @@ plt.show()
 # _, expected = np.unique(generated, return_counts=True)
 # plt.hist(generated, bins=50)
 # plt.show()
+"""
+Test a discrete distribution against expected values.
+"""
 expected = data.size / 6
 chisq, p = chisquare(counts, expected)
 print(f"We have a chi2 of {chisq:.2f} with a p-value of {p:.3f}")
