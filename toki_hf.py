@@ -37,9 +37,10 @@ nem_vesszo_hiba_esely = 1-sum(pmf_poisson_3[:nem_vesszo_hiba_legalabb])
 kerdes3 = vesszo_hiba_esely*nem_vesszo_hiba_esely
 print(kerdes3)
 """
+Ha a négyes feladat nem jönne ki, nézd kisebb időtávban
 """
-max_keses_masodpercben = 150*60
-hivasok_masodpercenkent = 3.2/60/60
+max_keses_masodpercben = 70*60
+hivasok_masodpercenkent = 3.8/60/60
 
 print("Elméletileg ez a megoldás, de nálam nem volt elég pontos, hogy elfogadja: {0}".format(1/(max_keses_masodpercben*hivasok_masodpercenkent)))
 np.arange(5)
