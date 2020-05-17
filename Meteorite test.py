@@ -22,6 +22,8 @@ plt.show()
 plt.hist(df["year"], bins=50)
 plt.show()
 
+pd.plotting.scatter_matrix(df[["mass", "year", "reclat", "reclong"]], figsize=(7,7))
+plt.show()
 
 
 ms = np.linspace(-5, 20, 100)
