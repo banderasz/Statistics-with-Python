@@ -38,10 +38,10 @@ kerdes3 = vesszo_hiba_esely*nem_vesszo_hiba_esely
 print(kerdes3)
 """
 """
-max_keses_masodpercben = 130*60
-hivasok_masodpercenkent = 2.7/60/60
+max_keses_masodpercben = 150*60
+hivasok_masodpercenkent = 3.2/60/60
 
-
+print("Elméletileg ez a megoldás, de nálam nem volt elég pontos, hogy elfogadja: {0}".format(1/(max_keses_masodpercben*hivasok_masodpercenkent)))
 np.arange(5)
 chance = 0
 for i in range(max_keses_masodpercben):
@@ -49,4 +49,4 @@ for i in range(max_keses_masodpercben):
     chance += ((1-pmf_poisson[0]))/max_keses_masodpercben
 
 kerdes4 = 1-(chance)
-print(kerdes4)
+print("Ezt elfogadta, numerikusan kiszámolva ugyanazt: {0}".format(kerdes4))
